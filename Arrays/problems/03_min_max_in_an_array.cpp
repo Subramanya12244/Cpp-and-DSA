@@ -2,9 +2,9 @@ using namespace std;
 #include <iostream>
 void min_max(int arr[],int size)
 {
-    int min=arr[0];
-    int max=arr[size-1];
-    for(int i=1;i<size;i++)
+    int min=INT16_MAX;
+    int max=INT16_MIN;
+    for(int i=0;i<size;i++)
     {
         if(arr[i]>max)
         {
