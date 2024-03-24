@@ -9,6 +9,17 @@ int inc(int n)
     n=n*5;
     cout<<n<<endl;
 }
+int change_array(int arr[],int n)
+{
+    for(int i=0;i<n;i++)
+    {
+        arr[i]=arr[i]*5;
+    }
+    for(int i=0;i<n;i++)
+    {
+        cout<<arr[i]<<endl;
+    }
+}
 int main()
 {
 int n=5; //it is the normal number 
@@ -33,5 +44,23 @@ inc(n);
 cout<<n<<endl;
 // in the above you can observe that both n value print diffrently that is because it sends a copy not actual n.
 
-// call by reference it is mainly used in the reference of the memory location.it is mostly used in arrays 
+// call by reference it is mainly used in the reference of the memory location.it is mostly used in arrays it means if we change the value in the array then it will be updated in the main array also
+
+
+int arr[5];
+for(int i=0; i<5; i++)
+{
+    cin>>arr[i];
+}
+cout<<"before"<<endl;
+for(int i=0;i<n;i++)
+    {
+        cout<<arr[i]<<endl;
+    }
+    change_array(arr,5);
+    cout<<"after"<<endl;
+    for(int i=0;i<n;i++)
+    {
+        cout<<arr[i]<<endl;
+    }
 }
