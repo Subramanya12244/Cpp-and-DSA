@@ -17,5 +17,5 @@ cout<<k<<endl;
 k++;
 cout<<k<<endl;
 cout<<n<<endl;
-return 0;
+
 }
