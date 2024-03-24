@@ -46,9 +46,10 @@ cout<<n<<endl;
 
 // call by reference it is mainly used in the reference of the memory location.it is mostly used in arrays it means if we change the value in the array then it will be updated in the main array also
 
-
-int arr[5];
-for(int i=0; i<5; i++)
+int n;
+cin>>n;
+int *arr=new int[n];
+for(int i=0; i<n; i++)
 {
     cin>>arr[i];
 }
