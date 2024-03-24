@@ -17,8 +17,9 @@ void extreme(int arr[],int size)
 
 int main()
 {
-    int n;
+    int n,m;
     cin>>n;
+    
     int arr[n];
     for(int i=0;i<n;i++)
     {
