@@ -20,7 +20,7 @@ int main()
 {
     int n;
     cin>>n;
-    int arr[n];
+    int *arr=new int[n];
     int target;
     cin >> target;
     bool flag=linear(arr,n,target);

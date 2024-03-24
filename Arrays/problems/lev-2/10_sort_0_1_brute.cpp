@@ -32,7 +32,7 @@ int sorting_z_o(vector<int> &arr,int n)
     }
 }
 
-void sorting_1(int arr[],int n)
+void sorting_1(vector<int> &arr,int n)
 {
     int count_zeros = 0;
     int count_ones = 0;
@@ -77,10 +77,6 @@ int main()
         cin>> arr[i];
     }
     // sorting_z_o(arr,n);
-    int arr1[n];
-     for(int i = 0;i<n;i++)
-    {
-        cin>> arr[i];
-    }
-    sorting_1(arr1,n);
+    
+    sorting_1(arr,n);
 }
