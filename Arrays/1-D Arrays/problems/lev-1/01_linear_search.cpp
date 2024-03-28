@@ -28,6 +28,7 @@ int main()
     {
         cout<<"the element is found";
     }
+    cout<<"hello";
     else
     {
         cout<<"the element is not found";
