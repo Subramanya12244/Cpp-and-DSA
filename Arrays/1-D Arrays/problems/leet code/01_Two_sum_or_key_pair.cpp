@@ -58,6 +58,7 @@ bool betterApproach(vector<int> &arr,int target,int n)
             j--;
         }
     }
+    return false;
 }
 int main()
 {
