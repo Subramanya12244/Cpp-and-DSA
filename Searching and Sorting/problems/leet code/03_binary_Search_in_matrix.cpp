@@ -105,10 +105,8 @@ int main() {
     cin >> target;
 
     int result = binarySearch(arr, target);
-    if (result != -1) {
-        cout << "Element found at index: " << result << endl;
-    }
-    else {
+    if (result == -1) {
+        // cout << "Element found at index: " << result << endl;
         cout << "Element not found" << endl;
     }
 
