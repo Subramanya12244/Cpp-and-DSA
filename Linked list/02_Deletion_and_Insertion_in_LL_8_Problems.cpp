@@ -1,6 +1,15 @@
 using namespace std;
 #include<iostream>
 #include<vector>
+
+/*possible deletion types:
+1.Head
+2.tail
+3.value
+4.position
+
+
+*/
 class Node{
     public:
     int data;
@@ -50,7 +59,7 @@ Node* deleteTail(Node *head)
     temp->next=nullptr;
     return head;
 }
-Node* deleteK(Node *head,int k)
+Node* deletePosition(Node *head,int k)
 {
     if(head==NULL)return head;
     if(k==1)
@@ -74,6 +83,32 @@ Node* deleteK(Node *head,int k)
         }
         prev=temp;
         temp=temp->next;
+    }
+    return head;
+}
+Node* deleteValue(Node *head,int value)
+{
+    if(head==NULL)return head;
+    if(head->data==value)
+    {
+        Node* temp=head;
+        head=head->next;
+        free(temp);
+        return head;
+    }
+    Node* prev=NULL;
+    Node* temp=head;
+    while(temp!=NULL)
+    {
+        if(temp->data==value)
+        {
+            prev->next=prev->next->next;
+            free(temp);
+            break;
+        }
+        prev=temp;
+        temp=temp->next;
+
     }
     return head;
 }
