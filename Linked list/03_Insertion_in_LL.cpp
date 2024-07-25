@@ -37,6 +37,31 @@ Node* InsertionAtTail(Node* head,int value)
     temp->next=newNode;
     return head;
 }
+Node* InsertionAtKpos(Node* head,int value,int k)
+{
+    if(head==NULL)
+    {
+        return new Node(value);
+    }
+    if(k==1)
+    {
+        return new Node(value,head);
+    }
+    Node* temp=head;
+    int count=0;
+    while(temp)
+    {
+        count++;
+        if(count==(k-1))
+        {
+            Node* x=new Node(value,temp->next);
+            temp->next=x;
+            break;
+        }
+        temp=temp->next;
+    }
+    return head;
+}
 Node* ConvertArr2LL(vector<int>arr)
 {
 Node* head=new Node(arr[0]);
@@ -70,6 +95,9 @@ cout<<"after"<<endl;
 // head=InsertionAtHead(head,10);
 // printList(head);
 
-head=InsertionAtTail(head,100);
+// head=InsertionAtTail(head,100);
+// printList(head);
+
+head=InsertionAtKpos(head,100,3);
 printList(head);
 }
