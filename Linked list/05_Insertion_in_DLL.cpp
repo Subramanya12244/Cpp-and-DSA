@@ -102,6 +102,13 @@ prev->next=newNode;
 temp->prev=newNode;
 return head;
 }
+void InsertBeforeNode(Node* temp,int value)
+{
+    Node* prev=temp->prev;
+    Node* newNode=new Node(value,temp,prev);
+    temp->prev=newNode;
+    prev->next=newNode;
+}
 int main()
 {
     vector<int> arr={
@@ -112,6 +119,12 @@ printList(head);
 // head=InsertHead(head,10);
 // printList(head);
 
-head=InsertBeforeTail(head,100);
+// head=InsertBeforeTail(head,100);
+// printList(head);
+
+// head=InsertAtKthPosition(head,100,2);
+// printList(head);
+
+InsertBeforeNode(head->next,100);
 printList(head);
 }
