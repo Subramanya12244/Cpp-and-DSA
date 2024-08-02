@@ -59,7 +59,49 @@ Node* InsertHead(Node* head,int x)
     return newHead;
 }
 
-Node* InsertAtTail(Node* head,int x)
+Node* InsertBeforeTail(Node* head,int x)
+{
+    if(head->next==NULL)
+    {
+        return InsertHead(head,x); 
+    }
+    Node* tail=head;
+    while(tail->next!=NULL)
+    {
+        tail=tail->next;
+    }
+    Node* prev=tail->prev;
+    Node* newTail=new Node(x);
+    newTail->next=tail;
+    newTail->prev=prev;
+    tail->prev=newTail;
+    prev->next=newTail;
+    return head;
+}
+Node* InsertAtKthPosition(Node* head,int value,int k)
+{
+if(k==1)
+{
+    return InsertHead(head,value);
+}
+Node* temp=head;
+int count=0;
+while(temp->next!=NULL)
+{
+    count++;
+    if(k==count)
+    {
+        break;
+    }
+
+    temp=temp->next;
+}
+Node* prev=temp->prev;
+Node* newNode=new Node(value,temp,prev);
+prev->next=newNode;
+temp->prev=newNode;
+return head;
+}
 int main()
 {
     vector<int> arr={
@@ -67,6 +109,9 @@ int main()
     };
 Node*head=ConvertArr2List(arr);
 printList(head);
-head=InsertHead(head,10);
+// head=InsertHead(head,10);
+// printList(head);
+
+head=InsertBeforeTail(head,100);
 printList(head);
 }
