@@ -1,2 +1,3 @@
-head=InsertionAtTail(head,100);
-// printList(head);
+printList(head);
+    // head=deleteHead(head);
+    // printList(head);
