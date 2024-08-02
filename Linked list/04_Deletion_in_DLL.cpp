@@ -126,6 +126,23 @@ if(head==nullptr) return head;
     free(temp);
     return head;
 }
+void deleteNode(Node* temp)
+{
+Node* prev=temp->prev;
+Node* next=temp->next;
+
+if(next==nullptr)
+{
+    prev->next=nullptr;
+    temp->prev=nullptr;
+    free(temp);
+    return;
+}
+prev->next=next;
+next->prev=prev;
+temp->next=temp->prev=nullptr;
+free(temp);
+}
 int main()
 {
     vector<int> arr={
@@ -140,7 +157,10 @@ int main()
     // head=deleteTail(head);
     // printList(head);
 
-    printList(head);
-    head=deleteAtKPosition(head,3);
+    // printList(head);
+    // head=deleteAtKPosition(head,3);
+    // printList(head);
+
+    deleteNode(head->next);
     printList(head);
 }
